@@ -501,6 +501,9 @@ Berikut adalah contoh script JavaScript yang melakukan validasi lebih lengkap pa
 
 ```
 
+![image](ss/ss35.png)
+
+
 Dalam contoh di atas, kami menambahkan validasi yang rinci untuk nama (harus diisi), email (menggunakan regular expression untuk memeriksa format email), nomor telepon (harus terdiri dari 10 digit angka), dan pesan (harus diisi). Anda dapat menyesuaikan dan memodifikasi validasi sesuai dengan kebutuhan Anda.
 
 
