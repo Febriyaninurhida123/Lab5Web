@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validasi Form</title>
+    <script>
+        function validateForm() {
+            var nama = document.forms["myForm"]["nama"].value;
+            var email = document.forms["myForm"]["email"].value;
+            var telepon = document.forms["myForm"]["telepon"].value;
+            var pesan = document.forms["myForm"]["pesan"].value;
+
+            // Validasi nama
+            if (nama == "") {
+                alert("Nama harus diisi");
+                return false;
+            }
+
+            // Validasi email
+            var emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!email.match(emailPattern)) {
+                alert("Email tidak valid");
+                return false;
+            }
+
+            // Validasi nomor telepon
+            var teleponPattern = /^\d{10}$/;
+            if (!telepon.match(teleponPattern)) {
+                alert("Nomor telepon harus terdiri dari 10 digit angka");
+                return false;
+            }
+
+            // Validasi pesan
+            if (pesan == "") {
+                alert("Pesan harus diisi");
+                return false;
+            }
+
+            // Jika semua validasi berhasil
+            alert("Formulir telah diisi dengan benar!");
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <form name="myForm" onsubmit="return validateForm()" method="post">
+        <label for="nama">Nama:</label>
+        <input type="text" name="nama"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="text" name="email"><br><br>
+
+        <label for="telepon">Nomor Telepon:</label>
+        <input type="text" name="telepon"><br><br>
+
+        <label for="pesan">Pesan:</label>
+        <textarea name="pesan"></textarea><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
